@@ -126,9 +126,9 @@
 							param.length=Marshal.SizeOf(typeof(WINDOWPLACEMENT));
 							//Get Window Status
 							_=GetWindowPlacement(processList[i].MainWindowHandle, out param);
-							if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)) {
-								param.showCmd=(Int32)WindowTools.WindowShowStyle.Show; //Restore from minimized
-								_=WindowTools.ShowWindow(processList[i].MainWindowHandle, WindowTools.WindowShowStyle.Show);
+							if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)&&!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.ShowMaximized)) {
+								param.showCmd=(Int32)WindowTools.WindowShowStyle.ShowNormalNoActivate; //Restore from minimized
+								_=WindowTools.ShowWindow(processList[i].MainWindowHandle, WindowTools.WindowShowStyle.ShowNormalNoActivate);
 								if(!GetWindowRect(processList[i].MainWindowHandle, out rct)) {
 									_=MessageBox.Show("ERROR");
 									return;
@@ -187,9 +187,9 @@
 						WINDOWPLACEMENT param = new();
 						param.length=Marshal.SizeOf(typeof(WINDOWPLACEMENT));
 						//Get Window Status
-						_=GetWindowPlacement(_NewProcess.MainWindowHandle, out param);
-						if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)) {
-							_=WindowTools.ShowWindow(_NewProcess.MainWindowHandle, WindowTools.WindowShowStyle.Show);
+						if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)&&!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.ShowMaximized)) {
+							_=GetWindowPlacement(_NewProcess.MainWindowHandle, out param);
+							_=WindowTools.ShowWindow(_NewProcess.MainWindowHandle, WindowTools.WindowShowStyle.ShowNormalNoActivate);
 							if(!GetWindowRect(_NewProcess.MainWindowHandle, out rct)) {
 								_=MessageBox.Show("ERROR");
 								return;
