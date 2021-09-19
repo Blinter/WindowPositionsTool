@@ -220,7 +220,7 @@
 			richTextBox1.Text=String.Empty;
 			richTextBox1.Update();
 			Int32 _StringBuffer = 2048;
-			StringBuilder _Test2 = new();
+			StringBuilder _String = new();
 			Process[] AllProcesses = Process.GetProcesses();
 			if(AllProcesses.Length.Equals(0))
 				return;
@@ -258,7 +258,7 @@
 						_Rectangle=new() { X=rct2.Left, Y=rct2.Top, Width=rct2.Right-rct2.Left, Height=rct2.Bottom-rct2.Top };
 
 						try {
-							_=_Test2.Append(
+							_=_String.Append(
 								_WindowTitle.ToString()+"...."+
 								_Rectangle.X.ToString()+"...."+
 								_Rectangle.Y.ToString()+"...."+
@@ -273,7 +273,7 @@
 						}catch(InvalidOperationException ex) when(ex.HResult.Equals(-2146233079)) { }
 					}
 				}
-				richTextBox1.Text=_Test2.ToString();
+				richTextBox1.Text=_String.ToString();
 				richTextBox1.Update();
 			}
 			StatusLabel.Text="Loaded Window Positions!";
