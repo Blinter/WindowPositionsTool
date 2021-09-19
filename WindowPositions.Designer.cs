@@ -71,7 +71,7 @@
 			this.LabelMousePosX.AutoSize = true;
 			this.LabelMousePosX.ForeColor = System.Drawing.Color.Yellow;
 			this.LabelMousePosX.Location = new System.Drawing.Point(153, 13);
-			this.LabelMousePosX.Name ="LabelMousePosX";
+			this.LabelMousePosX.Name = "LabelMousePosX";
 			this.LabelMousePosX.Size = new System.Drawing.Size(78, 15);
 			this.LabelMousePosX.TabIndex = 2;
 			this.LabelMousePosX.Text = "Mouse Pos X:";
@@ -182,7 +182,7 @@
 			this.LabelWindowList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.LabelWindowList.ForeColor = System.Drawing.Color.Yellow;
 			this.LabelWindowList.Location = new System.Drawing.Point(389, 4);
-			this.LabelWindowList.Name ="LabelWindowList";
+			this.LabelWindowList.Name = "LabelWindowList";
 			this.LabelWindowList.Size = new System.Drawing.Size(96, 21);
 			this.LabelWindowList.TabIndex = 12;
 			this.LabelWindowList.Text = "Window List";
@@ -192,7 +192,7 @@
 			this.LabelFormat.AutoSize = true;
 			this.LabelFormat.ForeColor = System.Drawing.Color.Yellow;
 			this.LabelFormat.Location = new System.Drawing.Point(267, 35);
-			this.LabelFormat.Name ="LabelFormat";
+			this.LabelFormat.Name = "LabelFormat";
 			this.LabelFormat.Size = new System.Drawing.Size(53, 15);
 			this.LabelFormat.TabIndex = 13;
 			this.LabelFormat.Text = "FORMAT";
@@ -202,7 +202,7 @@
 			this.LabelFormatList.AutoSize = true;
 			this.LabelFormatList.ForeColor = System.Drawing.Color.Yellow;
 			this.LabelFormatList.Location = new System.Drawing.Point(326, 35);
-			this.LabelFormatList.Name ="LabelFormatList";
+			this.LabelFormatList.Name = "LabelFormatList";
 			this.LabelFormatList.Size = new System.Drawing.Size(364, 15);
 			this.LabelFormatList.TabIndex = 14;
 			this.LabelFormatList.Text = "Window Title....X....Y....Width....Height....Process Name....Arguments";
@@ -256,7 +256,7 @@
 			this.StatusLabel.Name = "StatusLabel";
 			this.StatusLabel.Size = new System.Drawing.Size(137, 15);
 			this.StatusLabel.TabIndex = 17;
-			this.StatusLabel.Text = "Updated Sept. 18th, 2021";
+			this.StatusLabel.Text = "Updated Sept. 19th, 2021";
 			this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// WindowPositions

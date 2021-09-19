@@ -14,6 +14,9 @@
 		[return: MarshalAs(UnmanagedType.Bool)]
 		private static extern Boolean GetWindowRect(IntPtr hWnd, out RECT lpRect);
 
+		[DllImport("user32.dll")]
+		private static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT nCmdShow);
+
 		[StructLayout(LayoutKind.Sequential)]
 		private struct RECT {
 			public Int32 Left;        // x position of upper-left corner
@@ -121,8 +124,10 @@
 							Rectangle myRect = new() { X=rct.Left, Y=rct.Top, Width=rct.Right-rct.Left, Height=rct.Bottom-rct.Top };
 							WINDOWPLACEMENT param = new();
 							param.length=Marshal.SizeOf(typeof(WINDOWPLACEMENT));
+							//Get Window Status
+							_=GetWindowPlacement(processList[i].MainWindowHandle, out param);
 							if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)) {
-								//param.showCmd=WindowTools.SW_RESTORE; //Restore from minimized
+								param.showCmd=(Int32)WindowTools.WindowShowStyle.Show; //Restore from minimized
 								_=WindowTools.ShowWindow(processList[i].MainWindowHandle, WindowTools.WindowShowStyle.Show);
 								if(!GetWindowRect(processList[i].MainWindowHandle, out rct)) {
 									_=MessageBox.Show("ERROR");
@@ -147,6 +152,8 @@
 										if(!myRect.X.Equals(_Setting.X)||!myRect.Y.Equals(_Setting.Y)||
 											!myRect.Width.Equals(_Setting.Width)||!myRect.Height.Equals(_Setting.Height)) {
 											param.length=Marshal.SizeOf(typeof(WINDOWPLACEMENT));
+											//Get Window Status
+											_=GetWindowPlacement(processList[i].MainWindowHandle, out param);
 											param.rcNormalPosition=new() { X=_Setting.X, Y=_Setting.Y, Width=_Setting.Width, Height=_Setting.Height };
 											_=WindowTools.MoveWindow(processList[i].MainWindowHandle, _Setting.X, _Setting.Y, _Setting.Width, _Setting.Height, true);
 										}
@@ -179,6 +186,8 @@
 						Rectangle myRect = new() { X=rct.Left, Y=rct.Top, Width=rct.Right-rct.Left, Height=rct.Bottom-rct.Top };
 						WINDOWPLACEMENT param = new();
 						param.length=Marshal.SizeOf(typeof(WINDOWPLACEMENT));
+						//Get Window Status
+						_=GetWindowPlacement(_NewProcess.MainWindowHandle, out param);
 						if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)) {
 							_=WindowTools.ShowWindow(_NewProcess.MainWindowHandle, WindowTools.WindowShowStyle.Show);
 							if(!GetWindowRect(_NewProcess.MainWindowHandle, out rct)) {
@@ -231,9 +240,11 @@
 
 						WINDOWPLACEMENT param = new();
 						param.length=Marshal.SizeOf(typeof(WINDOWPLACEMENT));
-						if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)) {
-							//param.showCmd=WindowTools.SW_RESTORE; //SW_SHOWNORMAL
-							_=WindowTools.ShowWindow(_Process.MainWindowHandle, WindowTools.WindowShowStyle.Show);
+						//Get Window Status
+						_=GetWindowPlacement(_Process.MainWindowHandle, out param);
+						if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)&&!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.ShowMaximized)) {
+							param.showCmd=(Int32)WindowTools.WindowShowStyle.ShowNormalNoActivate; //Restore from minimized
+							_=WindowTools.ShowWindow(_Process.MainWindowHandle, WindowTools.WindowShowStyle.ShowNormalNoActivate);
 							param.rcNormalPosition=_Rectangle;
 						} else {
 							param.rcNormalPosition=_Rectangle;
