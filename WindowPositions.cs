@@ -175,10 +175,8 @@
 					Process _NewProcess = Process.Start(_Setting.Path, _Setting.Args);
 
 					//Sleep here ALLOW PROCESS TO START
-					System.Threading.Thread.Sleep(1500);
-
-					StringBuilder _String = new(_StringBuffer);
-					if(WindowTools.GetWindowTextA(_NewProcess.MainWindowHandle, _String, _StringBuffer)>0) {
+					System.Threading.Thread.Sleep(1800);
+					if(_NewProcess.Responding && !_NewProcess.HasExited) {
 						if(!GetWindowRect(_NewProcess.MainWindowHandle, out RECT rct)) {
 							_=MessageBox.Show("ERROR");
 							return;
