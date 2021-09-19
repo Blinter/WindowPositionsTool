@@ -226,8 +226,9 @@
 				return;
 			if(!(AllProcesses[0] is null)) {
 				Process[] processList = Process.GetProcesses();
+				StringBuilder _WindowTitle = new(_StringBuffer);
 				foreach (Process _Process in processList) {
-					StringBuilder _WindowTitle = new(_StringBuffer);
+					_=_WindowTitle.Clear();
 					if(//!_Process.MainWindowHandle.Equals(Process.GetCurrentProcess().MainWindowHandle)&&
 						!_Process.ProcessName.Equals(String.Empty)&&
 						!_Process.MainWindowTitle.Equals(String.Empty)&&
@@ -270,7 +271,6 @@
 								Environment.NewLine);
 						}catch(Win32Exception ex) when(ex.HResult.Equals(-2147467259)) { 
 						}catch(InvalidOperationException ex) when(ex.HResult.Equals(-2146233079)) { }
-						_=_WindowTitle.Clear();
 					}
 				}
 				richTextBox1.Text=_Test2.ToString();
