@@ -187,8 +187,8 @@
 						WINDOWPLACEMENT param = new();
 						param.length=Marshal.SizeOf(typeof(WINDOWPLACEMENT));
 						//Get Window Status
+						_=GetWindowPlacement(_NewProcess.MainWindowHandle, out param);
 						if(!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)&&!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.ShowMaximized)) {
-							_=GetWindowPlacement(_NewProcess.MainWindowHandle, out param);
 							_=WindowTools.ShowWindow(_NewProcess.MainWindowHandle, WindowTools.WindowShowStyle.ShowNormalNoActivate);
 							if(!GetWindowRect(_NewProcess.MainWindowHandle, out rct)) {
 								_=MessageBox.Show("ERROR");
