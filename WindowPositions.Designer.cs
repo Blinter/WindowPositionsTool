@@ -24,275 +24,312 @@
 		///  the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			this.LabelResX = new System.Windows.Forms.Label();
-			this.LabelResY = new System.Windows.Forms.Label();
-			this.LabelMousePosX = new System.Windows.Forms.Label();
-			this.LabelMousePosY = new System.Windows.Forms.Label();
-			this.ResX = new System.Windows.Forms.Label();
-			this.ResY = new System.Windows.Forms.Label();
-			this.MouseX = new System.Windows.Forms.Label();
-			this.MouseY = new System.Windows.Forms.Label();
-			this.LoadFileButton = new System.Windows.Forms.Button();
-			this.SaveFileButton = new System.Windows.Forms.Button();
-			this.ApplyButton = new System.Windows.Forms.Button();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-			this.LabelWindowList = new System.Windows.Forms.Label();
-			this.LabelFormat = new System.Windows.Forms.Label();
-			this.LabelFormatList = new System.Windows.Forms.Label();
-			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-			this.ClearTextboxButton = new System.Windows.Forms.Button();
-			this.loadWindowsButton = new System.Windows.Forms.Button();
-			this.StatusLabel = new System.Windows.Forms.Label();
-			this.SuspendLayout();
+			LabelResX = new System.Windows.Forms.Label();
+			LabelResY = new System.Windows.Forms.Label();
+			LabelMousePosX = new System.Windows.Forms.Label();
+			LabelMousePosY = new System.Windows.Forms.Label();
+			ResX = new System.Windows.Forms.Label();
+			ResY = new System.Windows.Forms.Label();
+			MouseX = new System.Windows.Forms.Label();
+			MouseY = new System.Windows.Forms.Label();
+			LoadFileButton = new System.Windows.Forms.Button();
+			SaveFileButton = new System.Windows.Forms.Button();
+			ApplyButton = new System.Windows.Forms.Button();
+			ParameterList = new System.Windows.Forms.RichTextBox();
+			LabelWindowList = new System.Windows.Forms.Label();
+			LabelFormat = new System.Windows.Forms.Label();
+			LabelFormatList = new System.Windows.Forms.Label();
+			openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+			ClearTextboxButton = new System.Windows.Forms.Button();
+			LoadWindowsButton = new System.Windows.Forms.Button();
+			StatusLabel = new System.Windows.Forms.Label();
+			label1 = new System.Windows.Forms.Label();
+			TimeBetweenLaunchesms_Text = new System.Windows.Forms.TextBox();
+			SuspendLayout();
 			// 
 			// LabelResX
 			// 
-			this.LabelResX.AutoSize = true;
-			this.LabelResX.ForeColor = System.Drawing.Color.Yellow;
-			this.LabelResX.Location = new System.Drawing.Point(13, 13);
-			this.LabelResX.Name = "LabelResX";
-			this.LabelResX.Size = new System.Drawing.Size(76, 15);
-			this.LabelResX.TabIndex = 0;
-			this.LabelResX.Text = "Resolution X:";
+			LabelResX.AutoSize = true;
+			LabelResX.ForeColor = System.Drawing.Color.Yellow;
+			LabelResX.Location = new System.Drawing.Point(13, 13);
+			LabelResX.Name = "LabelResX";
+			LabelResX.Size = new System.Drawing.Size(76, 15);
+			LabelResX.TabIndex = 0;
+			LabelResX.Text = "Resolution X:";
 			// 
 			// LabelResY
 			// 
-			this.LabelResY.AutoSize = true;
-			this.LabelResY.ForeColor = System.Drawing.Color.Yellow;
-			this.LabelResY.Location = new System.Drawing.Point(13, 31);
-			this.LabelResY.Name = "LabelResY";
-			this.LabelResY.Size = new System.Drawing.Size(76, 15);
-			this.LabelResY.TabIndex = 1;
-			this.LabelResY.Text = "Resolution Y:";
+			LabelResY.AutoSize = true;
+			LabelResY.ForeColor = System.Drawing.Color.Yellow;
+			LabelResY.Location = new System.Drawing.Point(13, 31);
+			LabelResY.Name = "LabelResY";
+			LabelResY.Size = new System.Drawing.Size(76, 15);
+			LabelResY.TabIndex = 1;
+			LabelResY.Text = "Resolution Y:";
 			// 
 			// LabelMousePosX
 			// 
-			this.LabelMousePosX.AutoSize = true;
-			this.LabelMousePosX.ForeColor = System.Drawing.Color.Yellow;
-			this.LabelMousePosX.Location = new System.Drawing.Point(153, 13);
-			this.LabelMousePosX.Name = "LabelMousePosX";
-			this.LabelMousePosX.Size = new System.Drawing.Size(78, 15);
-			this.LabelMousePosX.TabIndex = 2;
-			this.LabelMousePosX.Text = "Mouse Pos X:";
+			LabelMousePosX.AutoSize = true;
+			LabelMousePosX.ForeColor = System.Drawing.Color.Yellow;
+			LabelMousePosX.Location = new System.Drawing.Point(139, 12);
+			LabelMousePosX.Name = "LabelMousePosX";
+			LabelMousePosX.Size = new System.Drawing.Size(78, 15);
+			LabelMousePosX.TabIndex = 2;
+			LabelMousePosX.Text = "Mouse Pos X:";
 			// 
 			// LabelMousePosY
 			// 
-			this.LabelMousePosY.AutoSize = true;
-			this.LabelMousePosY.ForeColor = System.Drawing.Color.Yellow;
-			this.LabelMousePosY.Location = new System.Drawing.Point(153, 31);
-			this.LabelMousePosY.Name = "LabelMousePosY";
-			this.LabelMousePosY.Size = new System.Drawing.Size(78, 15);
-			this.LabelMousePosY.TabIndex = 3;
-			this.LabelMousePosY.Text = "Mouse Pos Y:";
+			LabelMousePosY.AutoSize = true;
+			LabelMousePosY.ForeColor = System.Drawing.Color.Yellow;
+			LabelMousePosY.Location = new System.Drawing.Point(139, 30);
+			LabelMousePosY.Name = "LabelMousePosY";
+			LabelMousePosY.Size = new System.Drawing.Size(78, 15);
+			LabelMousePosY.TabIndex = 3;
+			LabelMousePosY.Text = "Mouse Pos Y:";
 			// 
 			// ResX
 			// 
-			this.ResX.AutoSize = true;
-			this.ResX.ForeColor = System.Drawing.Color.Yellow;
-			this.ResX.Location = new System.Drawing.Point(96, 13);
-			this.ResX.Name = "ResX";
-			this.ResX.Size = new System.Drawing.Size(13, 15);
-			this.ResX.TabIndex = 4;
-			this.ResX.Text = "0";
+			ResX.AutoSize = true;
+			ResX.Font = new System.Drawing.Font("Segoe UI", 10F);
+			ResX.ForeColor = System.Drawing.Color.LightSkyBlue;
+			ResX.Location = new System.Drawing.Point(95, 11);
+			ResX.Name = "ResX";
+			ResX.Size = new System.Drawing.Size(17, 19);
+			ResX.TabIndex = 4;
+			ResX.Text = "0";
 			// 
 			// ResY
 			// 
-			this.ResY.AutoSize = true;
-			this.ResY.ForeColor = System.Drawing.Color.Yellow;
-			this.ResY.Location = new System.Drawing.Point(96, 31);
-			this.ResY.Name = "ResY";
-			this.ResY.Size = new System.Drawing.Size(13, 15);
-			this.ResY.TabIndex = 5;
-			this.ResY.Text = "0";
+			ResY.AutoSize = true;
+			ResY.Font = new System.Drawing.Font("Segoe UI", 10F);
+			ResY.ForeColor = System.Drawing.Color.LightSkyBlue;
+			ResY.Location = new System.Drawing.Point(95, 29);
+			ResY.Name = "ResY";
+			ResY.Size = new System.Drawing.Size(17, 19);
+			ResY.TabIndex = 5;
+			ResY.Text = "0";
 			// 
 			// MouseX
 			// 
-			this.MouseX.AutoSize = true;
-			this.MouseX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.MouseX.ForeColor = System.Drawing.Color.Yellow;
-			this.MouseX.Location = new System.Drawing.Point(237, 13);
-			this.MouseX.Name = "MouseX";
-			this.MouseX.Size = new System.Drawing.Size(13, 15);
-			this.MouseX.TabIndex = 6;
-			this.MouseX.Text = "0";
+			MouseX.AutoSize = true;
+			MouseX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			MouseX.Font = new System.Drawing.Font("Segoe UI", 10F);
+			MouseX.ForeColor = System.Drawing.Color.LightSkyBlue;
+			MouseX.Location = new System.Drawing.Point(222, 10);
+			MouseX.Name = "MouseX";
+			MouseX.Size = new System.Drawing.Size(17, 19);
+			MouseX.TabIndex = 6;
+			MouseX.Text = "0";
 			// 
 			// MouseY
 			// 
-			this.MouseY.AutoSize = true;
-			this.MouseY.ForeColor = System.Drawing.Color.Yellow;
-			this.MouseY.Location = new System.Drawing.Point(237, 31);
-			this.MouseY.Name = "MouseY";
-			this.MouseY.Size = new System.Drawing.Size(13, 15);
-			this.MouseY.TabIndex = 7;
-			this.MouseY.Text = "0";
+			MouseY.AutoSize = true;
+			MouseY.Font = new System.Drawing.Font("Segoe UI", 10F);
+			MouseY.ForeColor = System.Drawing.Color.LightSkyBlue;
+			MouseY.Location = new System.Drawing.Point(222, 28);
+			MouseY.Name = "MouseY";
+			MouseY.Size = new System.Drawing.Size(17, 19);
+			MouseY.TabIndex = 7;
+			MouseY.Text = "0";
 			// 
 			// LoadFileButton
 			// 
-			this.LoadFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.LoadFileButton.ForeColor = System.Drawing.Color.Orange;
-			this.LoadFileButton.Location = new System.Drawing.Point(807, 4);
-			this.LoadFileButton.Name = "LoadFileButton";
-			this.LoadFileButton.Size = new System.Drawing.Size(75, 23);
-			this.LoadFileButton.TabIndex = 8;
-			this.LoadFileButton.Text = "Load File";
-			this.LoadFileButton.UseVisualStyleBackColor = true;
-			this.LoadFileButton.Click += new System.EventHandler(this.LoadFileButton_Click);
+			LoadFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			LoadFileButton.ForeColor = System.Drawing.Color.Orange;
+			LoadFileButton.Location = new System.Drawing.Point(807, 4);
+			LoadFileButton.Name = "LoadFileButton";
+			LoadFileButton.Size = new System.Drawing.Size(75, 23);
+			LoadFileButton.TabIndex = 8;
+			LoadFileButton.Text = "Load File";
+			LoadFileButton.UseVisualStyleBackColor = true;
+			LoadFileButton.Click += LoadFileButton_Click;
 			// 
 			// SaveFileButton
 			// 
-			this.SaveFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.SaveFileButton.ForeColor = System.Drawing.Color.Orange;
-			this.SaveFileButton.Location = new System.Drawing.Point(726, 4);
-			this.SaveFileButton.Name = "SaveFileButton";
-			this.SaveFileButton.Size = new System.Drawing.Size(75, 23);
-			this.SaveFileButton.TabIndex = 9;
-			this.SaveFileButton.Text = "Save File";
-			this.SaveFileButton.UseVisualStyleBackColor = true;
-			this.SaveFileButton.Click += new System.EventHandler(this.SaveButton_Click);
+			SaveFileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			SaveFileButton.ForeColor = System.Drawing.Color.Orange;
+			SaveFileButton.Location = new System.Drawing.Point(726, 4);
+			SaveFileButton.Name = "SaveFileButton";
+			SaveFileButton.Size = new System.Drawing.Size(75, 23);
+			SaveFileButton.TabIndex = 9;
+			SaveFileButton.Text = "Save File";
+			SaveFileButton.UseVisualStyleBackColor = true;
+			SaveFileButton.Click += SaveButton_Click;
 			// 
 			// ApplyButton
 			// 
-			this.ApplyButton.BackColor = System.Drawing.SystemColors.Highlight;
-			this.ApplyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.ApplyButton.ForeColor = System.Drawing.Color.Orange;
-			this.ApplyButton.Location = new System.Drawing.Point(713, 31);
-			this.ApplyButton.Name = "ApplyButton";
-			this.ApplyButton.Size = new System.Drawing.Size(53, 23);
-			this.ApplyButton.TabIndex = 10;
-			this.ApplyButton.Text = "Apply";
-			this.ApplyButton.UseVisualStyleBackColor = false;
-			this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
+			ApplyButton.BackColor = System.Drawing.SystemColors.Highlight;
+			ApplyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			ApplyButton.ForeColor = System.Drawing.SystemColors.Desktop;
+			ApplyButton.Location = new System.Drawing.Point(764, 30);
+			ApplyButton.Name = "ApplyButton";
+			ApplyButton.Size = new System.Drawing.Size(53, 24);
+			ApplyButton.TabIndex = 10;
+			ApplyButton.Text = "Apply";
+			ApplyButton.UseVisualStyleBackColor = false;
+			ApplyButton.Click += ApplyButton_Click;
 			// 
-			// richTextBox1
+			// ParameterList
 			// 
-			this.richTextBox1.BackColor = System.Drawing.Color.DarkBlue;
-			this.richTextBox1.DetectUrls = false;
-			this.richTextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.richTextBox1.ForeColor = System.Drawing.Color.White;
-			this.richTextBox1.Location = new System.Drawing.Point(13, 60);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(869, 516);
-			this.richTextBox1.TabIndex = 11;
-			this.richTextBox1.Text = "";
+			ParameterList.BackColor = System.Drawing.Color.DarkBlue;
+			ParameterList.DetectUrls = false;
+			ParameterList.Font = new System.Drawing.Font("Consolas", 10F);
+			ParameterList.ForeColor = System.Drawing.Color.White;
+			ParameterList.ImeMode = System.Windows.Forms.ImeMode.Disable;
+			ParameterList.Location = new System.Drawing.Point(13, 60);
+			ParameterList.Name = "ParameterList";
+			ParameterList.Size = new System.Drawing.Size(869, 516);
+			ParameterList.TabIndex = 11;
+			ParameterList.Text = "";
+			ParameterList.WordWrap = false;
 			// 
 			// LabelWindowList
 			// 
-			this.LabelWindowList.AutoSize = true;
-			this.LabelWindowList.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.LabelWindowList.ForeColor = System.Drawing.Color.Yellow;
-			this.LabelWindowList.Location = new System.Drawing.Point(389, 4);
-			this.LabelWindowList.Name = "LabelWindowList";
-			this.LabelWindowList.Size = new System.Drawing.Size(96, 21);
-			this.LabelWindowList.TabIndex = 12;
-			this.LabelWindowList.Text = "Window List";
+			LabelWindowList.AutoSize = true;
+			LabelWindowList.Font = new System.Drawing.Font("Work Sans", 17.75F);
+			LabelWindowList.ForeColor = System.Drawing.Color.Yellow;
+			LabelWindowList.Location = new System.Drawing.Point(376, 5);
+			LabelWindowList.Name = "LabelWindowList";
+			LabelWindowList.Size = new System.Drawing.Size(157, 28);
+			LabelWindowList.TabIndex = 12;
+			LabelWindowList.Text = "Window List";
 			// 
 			// LabelFormat
 			// 
-			this.LabelFormat.AutoSize = true;
-			this.LabelFormat.ForeColor = System.Drawing.Color.Yellow;
-			this.LabelFormat.Location = new System.Drawing.Point(267, 35);
-			this.LabelFormat.Name = "LabelFormat";
-			this.LabelFormat.Size = new System.Drawing.Size(53, 15);
-			this.LabelFormat.TabIndex = 13;
-			this.LabelFormat.Text = "FORMAT";
+			LabelFormat.AutoSize = true;
+			LabelFormat.Font = new System.Drawing.Font("Arial", 9F);
+			LabelFormat.ForeColor = System.Drawing.Color.LavenderBlush;
+			LabelFormat.Location = new System.Drawing.Point(255, 42);
+			LabelFormat.Name = "LabelFormat";
+			LabelFormat.Size = new System.Drawing.Size(54, 15);
+			LabelFormat.TabIndex = 13;
+			LabelFormat.Text = "FORMAT";
 			// 
 			// LabelFormatList
 			// 
-			this.LabelFormatList.AutoSize = true;
-			this.LabelFormatList.ForeColor = System.Drawing.Color.Yellow;
-			this.LabelFormatList.Location = new System.Drawing.Point(326, 35);
-			this.LabelFormatList.Name = "LabelFormatList";
-			this.LabelFormatList.Size = new System.Drawing.Size(364, 15);
-			this.LabelFormatList.TabIndex = 14;
-			this.LabelFormatList.Text = "Window Title....X....Y....Width....Height....Process Name....Arguments";
+			LabelFormatList.AutoSize = true;
+			LabelFormatList.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+			LabelFormatList.ForeColor = System.Drawing.Color.Yellow;
+			LabelFormatList.Location = new System.Drawing.Point(315, 37);
+			LabelFormatList.Name = "LabelFormatList";
+			LabelFormatList.Size = new System.Drawing.Size(389, 17);
+			LabelFormatList.TabIndex = 14;
+			LabelFormatList.Text = "Window Title....X....Y....Width....Height....Process Name....Arguments";
 			// 
 			// openFileDialog1
 			// 
-			this.openFileDialog1.FileName = "openFileDialog1";
-			this.openFileDialog1.Filter = "*.winposlist|";
-			this.openFileDialog1.Title = "Open Window Position List File";
+			openFileDialog1.FileName = "openFileDialog1";
+			openFileDialog1.Filter = "*.winposlist|";
+			openFileDialog1.Title = "Open Window Position List File";
 			// 
 			// saveFileDialog1
 			// 
-			this.saveFileDialog1.CreatePrompt = true;
-			this.saveFileDialog1.DefaultExt = "winposlist";
-			this.saveFileDialog1.FileName = "default";
-			this.saveFileDialog1.Filter = "*.winposlist|";
-			this.saveFileDialog1.InitialDirectory = ".";
-			this.saveFileDialog1.Title = "Save Configuration";
+			saveFileDialog1.CreatePrompt = true;
+			saveFileDialog1.DefaultExt = "winposlist";
+			saveFileDialog1.FileName = "default";
+			saveFileDialog1.Filter = "*.winposlist|";
+			saveFileDialog1.InitialDirectory = ".";
+			saveFileDialog1.Title = "Save Configuration";
 			// 
 			// ClearTextboxButton
 			// 
-			this.ClearTextboxButton.BackColor = System.Drawing.SystemColors.Highlight;
-			this.ClearTextboxButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.ClearTextboxButton.ForeColor = System.Drawing.Color.Orange;
-			this.ClearTextboxButton.Location = new System.Drawing.Point(772, 30);
-			this.ClearTextboxButton.Name = "ClearTextboxButton";
-			this.ClearTextboxButton.Size = new System.Drawing.Size(57, 24);
-			this.ClearTextboxButton.TabIndex = 15;
-			this.ClearTextboxButton.Text = "Clear";
-			this.ClearTextboxButton.UseVisualStyleBackColor = false;
-			this.ClearTextboxButton.Click += new System.EventHandler(this.ClearTextboxButton_Click);
+			ClearTextboxButton.BackColor = System.Drawing.SystemColors.Highlight;
+			ClearTextboxButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			ClearTextboxButton.ForeColor = System.Drawing.SystemColors.Desktop;
+			ClearTextboxButton.Location = new System.Drawing.Point(823, 30);
+			ClearTextboxButton.Name = "ClearTextboxButton";
+			ClearTextboxButton.Size = new System.Drawing.Size(57, 24);
+			ClearTextboxButton.TabIndex = 15;
+			ClearTextboxButton.Text = "Clear";
+			ClearTextboxButton.UseVisualStyleBackColor = false;
+			ClearTextboxButton.Click += ClearTextboxButton_Click;
 			// 
-			// loadWindowsButton
+			// LoadWindowsButton
 			// 
-			this.loadWindowsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.loadWindowsButton.ForeColor = System.Drawing.Color.Orange;
-			this.loadWindowsButton.Location = new System.Drawing.Point(619, 4);
-			this.loadWindowsButton.Name = "loadWindowsButton";
-			this.loadWindowsButton.Size = new System.Drawing.Size(101, 23);
-			this.loadWindowsButton.TabIndex = 16;
-			this.loadWindowsButton.Text = "Load Windows";
-			this.loadWindowsButton.UseVisualStyleBackColor = true;
-			this.loadWindowsButton.Click += new System.EventHandler(this.LoadWindowsButton_Click_1);
+			LoadWindowsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			LoadWindowsButton.ForeColor = System.Drawing.Color.Orange;
+			LoadWindowsButton.Location = new System.Drawing.Point(619, 4);
+			LoadWindowsButton.Name = "LoadWindowsButton";
+			LoadWindowsButton.Size = new System.Drawing.Size(101, 23);
+			LoadWindowsButton.TabIndex = 16;
+			LoadWindowsButton.Text = "Load Windows";
+			LoadWindowsButton.UseVisualStyleBackColor = true;
+			LoadWindowsButton.Click += LoadWindowsButton_Click;
 			// 
 			// StatusLabel
 			// 
-			this.StatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.StatusLabel.AutoSize = true;
-			this.StatusLabel.ForeColor = System.Drawing.Color.Yellow;
-			this.StatusLabel.Location = new System.Drawing.Point(389, 579);
-			this.StatusLabel.Name = "StatusLabel";
-			this.StatusLabel.Size = new System.Drawing.Size(137, 15);
-			this.StatusLabel.TabIndex = 17;
-			this.StatusLabel.Text = "Updated Sept. 19th, 2021";
-			this.StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			StatusLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			StatusLabel.AutoSize = true;
+			StatusLabel.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+			StatusLabel.ForeColor = System.Drawing.Color.Yellow;
+			StatusLabel.Location = new System.Drawing.Point(389, 587);
+			StatusLabel.Name = "StatusLabel";
+			StatusLabel.Size = new System.Drawing.Size(162, 14);
+			StatusLabel.TabIndex = 17;
+			StatusLabel.Text = "Updated March 10th, 2024";
+			StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// label1
+			// 
+			label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			label1.AutoSize = true;
+			label1.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+			label1.ForeColor = System.Drawing.Color.Yellow;
+			label1.Location = new System.Drawing.Point(13, 587);
+			label1.Name = "label1";
+			label1.Size = new System.Drawing.Size(181, 14);
+			label1.TabIndex = 18;
+			label1.Text = "Time between Launches (ms):";
+			label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// TimeBetweenLaunchesms_Text
+			// 
+			TimeBetweenLaunchesms_Text.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			TimeBetweenLaunchesms_Text.Location = new System.Drawing.Point(200, 583);
+			TimeBetweenLaunchesms_Text.MaxLength = 255;
+			TimeBetweenLaunchesms_Text.Name = "TimeBetweenLaunchesms_Text";
+			TimeBetweenLaunchesms_Text.Size = new System.Drawing.Size(60, 16);
+			TimeBetweenLaunchesms_Text.TabIndex = 19;
+			TimeBetweenLaunchesms_Text.Text = "500";
+			TimeBetweenLaunchesms_Text.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			TimeBetweenLaunchesms_Text.WordWrap = false;
 			// 
 			// WindowPositions
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(898, 600);
-			this.Controls.Add(this.StatusLabel);
-			this.Controls.Add(this.loadWindowsButton);
-			this.Controls.Add(this.ClearTextboxButton);
-			this.Controls.Add(this.LabelFormatList);
-			this.Controls.Add(this.LabelFormat);
-			this.Controls.Add(this.LabelWindowList);
-			this.Controls.Add(this.richTextBox1);
-			this.Controls.Add(this.ApplyButton);
-			this.Controls.Add(this.SaveFileButton);
-			this.Controls.Add(this.LoadFileButton);
-			this.Controls.Add(this.MouseY);
-			this.Controls.Add(this.MouseX);
-			this.Controls.Add(this.ResY);
-			this.Controls.Add(this.ResX);
-			this.Controls.Add(this.LabelMousePosY);
-			this.Controls.Add(this.LabelMousePosX);
-			this.Controls.Add(this.LabelResY);
-			this.Controls.Add(this.LabelResX);
-			this.MaximumSize = new System.Drawing.Size(3840, 2158);
-			this.MinimumSize = new System.Drawing.Size(914, 250);
-			this.Name = "WindowPositions";
-			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-			this.Text = "Window Positions Tool";
-			this.ResizeEnd += new System.EventHandler(this.WindowPositions_ResizeEnd);
-			this.ResumeLayout(false);
-			this.PerformLayout();
-
+			AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+			AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+			AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			BackColor = System.Drawing.Color.Black;
+			ClientSize = new System.Drawing.Size(898, 606);
+			Controls.Add(TimeBetweenLaunchesms_Text);
+			Controls.Add(label1);
+			Controls.Add(StatusLabel);
+			Controls.Add(LoadWindowsButton);
+			Controls.Add(ClearTextboxButton);
+			Controls.Add(LabelFormatList);
+			Controls.Add(LabelFormat);
+			Controls.Add(LabelWindowList);
+			Controls.Add(ParameterList);
+			Controls.Add(ApplyButton);
+			Controls.Add(SaveFileButton);
+			Controls.Add(LoadFileButton);
+			Controls.Add(MouseY);
+			Controls.Add(MouseX);
+			Controls.Add(ResY);
+			Controls.Add(ResX);
+			Controls.Add(LabelMousePosY);
+			Controls.Add(LabelMousePosX);
+			Controls.Add(LabelResY);
+			Controls.Add(LabelResX);
+			MaximumSize = new System.Drawing.Size(3840, 2158);
+			MinimumSize = new System.Drawing.Size(914, 250);
+			Name = "WindowPositions";
+			SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+			Text = "Window Positions Tool";
+			ResizeEnd += WindowPositions_ResizeEnd;
+			ResumeLayout(false);
+			PerformLayout();
 		}
 
 		#endregion
@@ -308,15 +345,17 @@
 		private System.Windows.Forms.Button LoadFileButton;
 		private System.Windows.Forms.Button SaveFileButton;
 		private System.Windows.Forms.Button ApplyButton;
-		private System.Windows.Forms.RichTextBox richTextBox1;
+		private System.Windows.Forms.RichTextBox ParameterList;
 		private System.Windows.Forms.Label LabelWindowList;
 		private System.Windows.Forms.Label LabelFormat;
 		private System.Windows.Forms.Label LabelFormatList;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 		private System.Windows.Forms.Button ClearTextboxButton;
-		private System.Windows.Forms.Button loadWindowsButton;
+		private System.Windows.Forms.Button LoadWindowsButton;
 		private System.Windows.Forms.Label StatusLabel;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox TimeBetweenLaunchesms_Text;
 	}
 }
 

@@ -1,25 +1,26 @@
 ﻿namespace WindowPosition {
 	using System;
 	using System.Collections.Generic;
+	using System.Runtime.CompilerServices;
 	using System.Runtime.InteropServices;
 	using System.Text;
-	public class WindowHandleInfo {
-		private delegate bool EnumWindowProc(IntPtr hwnd, IntPtr lParam);
-		[DllImport("user32")]
+	internal partial class WindowHandleInfo {
+		internal delegate bool EnumWindowProc(IntPtr hwnd, IntPtr lParam);
+		[LibraryImport("user32")]
 		[return: MarshalAs(UnmanagedType.Bool)]
-		private static extern bool EnumChildWindows(IntPtr window, EnumWindowProc callback, IntPtr lParam);
+		internal static partial bool EnumChildWindows(IntPtr window, EnumWindowProc callback, IntPtr lParam);
 
-		private IntPtr _MainHandle;
-		public WindowHandleInfo(IntPtr handle) {
-			this._MainHandle=handle;
+		internal IntPtr _MainHandle;
+		internal WindowHandleInfo(IntPtr handle) {
+			this._MainHandle = handle;
 		}
-		public List<IntPtr> GetAllChildHandles() {
-			List<IntPtr> childHandles = new();
+		internal List<IntPtr> GetAllChildHandles() {
+			List<IntPtr> childHandles = [];
 			GCHandle gcChildhandlesList = GCHandle.Alloc(childHandles);
 			IntPtr pointerChildHandlesList = GCHandle.ToIntPtr(gcChildhandlesList);
 			try {
 				EnumWindowProc childProc = new(EnumWindow);
-				_=EnumChildWindows(this._MainHandle, childProc, pointerChildHandlesList);
+				_ = EnumChildWindows(this._MainHandle, childProc, pointerChildHandlesList);
 			} finally {
 				gcChildhandlesList.Free();
 			}
@@ -27,7 +28,7 @@
 		}
 		private bool EnumWindow(IntPtr hWnd, IntPtr lParam) {
 			GCHandle gcChildhandlesList = GCHandle.FromIntPtr(lParam);
-			if(gcChildhandlesList.Target==null) {
+			if (gcChildhandlesList.Target == null) {
 				return false;
 			}
 			List<IntPtr> childHandles = gcChildhandlesList.Target as List<IntPtr>;
@@ -35,18 +36,21 @@
 			return true;
 		}
 	}
-	public static class WindowTools {
+	internal static partial class WindowTools {
 
-		[DllImport("user32.dll", EntryPoint = "GetWindowTextA")]
-		public static extern Int32 GetWindowTextA(IntPtr hWnd, StringBuilder text, Int32 count);
+		//CA2101 CAS
+		[DllImport("user32.dll", SetLastError = true, EntryPoint = "GetWindowText", CharSet = CharSet.Unicode)]
+		internal static extern Int32 GetWindowText(IntPtr hWnd, StringBuilder text, Int32 count);
 
-		[DllImport("user32.dll", SetLastError = true)]
-		public static extern bool MoveWindow(IntPtr hWnd, Int32 X, Int32 Y, Int32 Width, int Height, Boolean Repaint);
+		[LibraryImport("user32.dll", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		internal static partial bool MoveWindow(IntPtr hWnd, Int32 X, Int32 Y, Int32 Width, int Height, [MarshalAs(UnmanagedType.Bool)] Boolean Repaint);
 
-		[DllImport("user32.dll")]
-		public static extern bool ShowWindow(IntPtr hWnd, WindowShowStyle nCmdShow);
+		[LibraryImport("user32.dll", SetLastError = true)]
+		[return: MarshalAs(UnmanagedType.Bool)]
+		internal static partial bool ShowWindow(IntPtr hWnd, WindowShowStyle nCmdShow);
 
-		public enum WindowShowStyle : UInt16 {
+		internal enum WindowShowStyle : UInt16 {
 			/// <summary>Hides the window and activates another window.</summary>
 			/// <remarks>See SW_HIDE</remarks>
 			Hide = 0,
@@ -103,37 +107,42 @@
 			/// <remarks>See SW_FORCEMINIMIZE</remarks>
 			ForceMinimized = 11
 		}
-		public struct WindowPositionSetting {
-			public String WindowTitle;
-			public Int32 X;
-			public Int32 Y;
-			public Int32 Width;
-			public Int32 Height;
-			public String Path;
-			public String Args;
+		internal struct WindowPositionSetting {
+			internal String WindowTitle;
+			internal Int32 X;
+			internal Int32 Y;
+			internal Int32 Width;
+			internal Int32 Height;
+			internal String Path;
+			internal String Args;
 		}
-		public static WindowPositionSetting WindowPositionStruct(String[] _Input) =>
+		internal static WindowPositionSetting WindowPositionStruct(String[] _Input) =>
 			new() {
-				WindowTitle=_Input[0],
-				X=Convert.ToInt32(_Input[1]),
-				Y=Convert.ToInt32(_Input[2]),
-				Width=Convert.ToInt32(_Input[3]),
-				Height=Convert.ToInt32(_Input[4]),
-				Path=_Input[5],
-				Args=_Input[6]
+				WindowTitle = _Input[0],
+				X = Convert.ToInt32(_Input[1]),
+				Y = Convert.ToInt32(_Input[2]),
+				Width = Convert.ToInt32(_Input[3]),
+				Height = Convert.ToInt32(_Input[4]),
+				Path = _Input[5],
+				Args = _Input[6]
 			};
-		public static WindowPositionSetting WindowPositionStruct(String _Input) {
-			String[] _Split = _Input.Split("....");
-			return new() {
-				WindowTitle=_Split[0],
-				X=Convert.ToInt32(_Split[1]),
-				Y=Convert.ToInt32(_Split[2]),
-				Width=Convert.ToInt32(_Split[3]),
-				Height=Convert.ToInt32(_Split[4]),
-				Path=_Split[5],
-				Args=_Split[6]
-			};
+		internal static WindowPositionSetting WindowPositionStruct(String _Input) {
+			try {
+				String[] _Split = _Input.Split("....");
+				if (!_Split.Length.Equals(7))
+					throw new Exception(String.Concat("Position setting incorrect syntax. ", _Input.AsSpan(0, 10)));
+				return new() {
+					WindowTitle = _Split[0],
+					X = Convert.ToInt32(_Split[1]),
+					Y = Convert.ToInt32(_Split[2]),
+					Width = Convert.ToInt32(_Split[3]),
+					Height = Convert.ToInt32(_Split[4]),
+					Path = _Split[5],
+					Args = _Split[6]
+				};
+			} catch (Exception _ex) {
+				throw new Exception("Processing Input Error" + _ex);
+			}
 		}
 	}
-
 }
