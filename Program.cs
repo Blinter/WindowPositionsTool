@@ -11,7 +11,7 @@ namespace WindowPosition {
 		/// </summary>
 		[STAThread]
 		static void Main() {
-			_=Application.SetHighDpiMode(HighDpiMode.SystemAware);
+			_ = Application.SetHighDpiMode(HighDpiMode.SystemAware);
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new WindowPositions());
