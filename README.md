@@ -6,8 +6,11 @@ Features
 +Load/Save Configuration File
 
 +Load Current Windows Positions and modify X,Y, Width, and Height of Window
+
 +Get your current mouse position
+
 +Launch programs that aren't found on the Window list and run with arguments
+
 +Matches windows using Window Title or Arguments (and path)
 <hr>
 
