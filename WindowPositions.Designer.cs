@@ -285,6 +285,7 @@
 			// 
 			// TimeBetweenLaunchesms_Text
 			// 
+			TimeBetweenLaunchesms_Text.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			TimeBetweenLaunchesms_Text.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			TimeBetweenLaunchesms_Text.Location = new System.Drawing.Point(200, 583);
 			TimeBetweenLaunchesms_Text.MaxLength = 255;
