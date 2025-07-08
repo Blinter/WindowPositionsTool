@@ -1,6 +1,6 @@
 # WindowPositionsTool
 
-![Screenshot of Tool GUI](repo\images\WindowPsositionsToolScreenShot.jpg)
+![Screenshot of Tool GUI](repo/images/WindowPositionsToolScreenshot.jpg)
 
 I personally use this tool to automate tasks, such as for batch loading multiple SSH connections to servers in order to debug issues or load workspaces.
 
