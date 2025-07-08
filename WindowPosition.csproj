@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net9.0-windows7.0</TargetFramework>	  
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <RuntimeIdentifiers>win-x86;win-arm64;win-x64</RuntimeIdentifiers>
     <UseWindowsForms>true</UseWindowsForms>
 	  <DebugType>none</DebugType>
 	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -16,7 +17,7 @@
 		<SelfContained>true</SelfContained>
 		<PlatformTarget>anycpu</PlatformTarget>
 		<NoWarn>IDE0049</NoWarn>
-	</PropertyGroup>	
+	</PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
 		<CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>

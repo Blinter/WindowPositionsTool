@@ -142,8 +142,8 @@
 						Height = _Rectangle.Bottom - _Rectangle.Top
 					};
 					WINDOWPLACEMENT param = new() {
-						length = Marshal.SizeOf(typeof(WINDOWPLACEMENT))
-					};
+						length = Marshal.SizeOf<WINDOWPLACEMENT>()
+                    };
 					if (!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)) {
 						//_WindowPlacementValues.showCmd=WindowTools.SW_RESTORE; 
 						//Restore from minimized
@@ -197,8 +197,8 @@
 								!myRect.Y.Equals(_Setting.Y) ||
 								!myRect.Width.Equals(_Setting.Width) ||
 								!myRect.Height.Equals(_Setting.Height)) {
-								param.length = Marshal.SizeOf(typeof(WINDOWPLACEMENT));
-								param.rcNormalPosition = new() {
+                                param.length = Marshal.SizeOf<WINDOWPLACEMENT>();
+                                param.rcNormalPosition = new() {
 									X = _Setting.X,
 									Y = _Setting.Y,
 									Width = _Setting.Width,
@@ -259,8 +259,8 @@
 					Height = rct.Bottom - rct.Top
 				};
 				WINDOWPLACEMENT param = new() {
-					length = Marshal.SizeOf(typeof(WINDOWPLACEMENT))
-				};
+                    length = Marshal.SizeOf<WINDOWPLACEMENT>()
+                };
 				if (!param.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)) {
 					_ = WindowTools.ShowWindow(
 						_NewProcess.MainWindowHandle,
@@ -324,8 +324,8 @@
 				};
 
 				WINDOWPLACEMENT _WindowPlacementValues = new() {
-					length = Marshal.SizeOf(typeof(WINDOWPLACEMENT))
-				};
+                    length = Marshal.SizeOf<WINDOWPLACEMENT>()
+                };
 				if (!_WindowPlacementValues.showCmd.Equals((Int32)WindowTools.WindowShowStyle.Show)) {
 					//_WindowPlacementValues.showCmd=WindowTools.SW_RESTORE; //SW_SHOWNORMAL
 					_ = WindowTools.ShowWindow(
@@ -397,12 +397,6 @@
 					TimeBetweenLaunchesms_Text.Text));
 			}
 			return false;
-		}
-
-		private void WindowPositions_ResizeEnd(object sender, EventArgs e) {
-			ParameterList.Width = this.Width - 41;
-			ParameterList.Height = this.Height - 123;
-			ParameterList.Update();
 		}
 	}
 }

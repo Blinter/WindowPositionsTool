@@ -1,8 +1,7 @@
 ﻿namespace WindowPosition {
 	using System;
-	using System.Collections.Generic;
-	using System.Runtime.CompilerServices;
-	using System.Runtime.InteropServices;
+    using System.Collections.Generic;
+    using System.Runtime.InteropServices;
 	using System.Text;
 	internal partial class WindowHandleInfo {
 		internal delegate bool EnumWindowProc(IntPtr hwnd, IntPtr lParam);
@@ -107,7 +106,19 @@
 			/// <remarks>See SW_FORCEMINIMIZE</remarks>
 			ForceMinimized = 11
 		}
-		internal struct WindowPositionSetting {
+        internal enum ArgumentEnums
+        {
+            WindowTitle = 0,
+			X = 1,
+			Y = 2,
+			Width = 3,
+			Height = 4,
+			Path = 5,
+			Args = 6,
+            RequiredLength = 7,
+
+        }
+        internal struct WindowPositionSetting {
 			internal String WindowTitle;
 			internal Int32 X;
 			internal Int32 Y;
@@ -118,27 +129,27 @@
 		}
 		internal static WindowPositionSetting WindowPositionStruct(String[] _Input) =>
 			new() {
-				WindowTitle = _Input[0],
-				X = Convert.ToInt32(_Input[1]),
-				Y = Convert.ToInt32(_Input[2]),
-				Width = Convert.ToInt32(_Input[3]),
-				Height = Convert.ToInt32(_Input[4]),
-				Path = _Input[5],
-				Args = _Input[6]
+				WindowTitle = _Input[(Int32)ArgumentEnums.WindowTitle],
+				X = Convert.ToInt32(_Input[(Int32)ArgumentEnums.X]),
+				Y = Convert.ToInt32(_Input[(Int32)ArgumentEnums.Y]),
+				Width = Convert.ToInt32(_Input[(Int32)ArgumentEnums.Width]),
+				Height = Convert.ToInt32(_Input[(Int32)ArgumentEnums.Height]),
+				Path = _Input[(Int32)ArgumentEnums.Path],
+				Args = _Input[(Int32)ArgumentEnums.Args]
 			};
 		internal static WindowPositionSetting WindowPositionStruct(String _Input) {
 			try {
 				String[] _Split = _Input.Split("....");
-				if (!_Split.Length.Equals(7))
-					throw new Exception(String.Concat("Position setting incorrect syntax. ", _Input.AsSpan(0, 10)));
+				if (!_Split.Length.Equals((Int32)ArgumentEnums.RequiredLength))
+					throw new Exception(String.Concat("Position setting contains incorrect syntax. ", _Input.AsSpan(0, 10)));
 				return new() {
-					WindowTitle = _Split[0],
-					X = Convert.ToInt32(_Split[1]),
-					Y = Convert.ToInt32(_Split[2]),
-					Width = Convert.ToInt32(_Split[3]),
-					Height = Convert.ToInt32(_Split[4]),
-					Path = _Split[5],
-					Args = _Split[6]
+					WindowTitle = _Split[(Int32)ArgumentEnums.WindowTitle],
+					X = Convert.ToInt32(_Split[(Int32)ArgumentEnums.X]),
+					Y = Convert.ToInt32(_Split[(Int32)ArgumentEnums.Y]),
+					Width = Convert.ToInt32(_Split[(Int32)ArgumentEnums.Width]),
+					Height = Convert.ToInt32(_Split[(Int32)ArgumentEnums.Height]),
+					Path = _Split[(Int32)ArgumentEnums.Path],
+					Args = _Split[(Int32)ArgumentEnums.Args]
 				};
 			} catch (Exception _ex) {
 				throw new Exception("Processing Input Error" + _ex);
